@@ -8,11 +8,12 @@ function createWindow () {
 
       webPreferences: {
           preload: path.join(__dirname, 'preload.js')
+          //preload: path.join(__dirname, 'apitest.js')
       }
     })
   
 
-    win.removeMenu()
+    //win.removeMenu()
     win.loadFile('src/index.html')
 }
 
