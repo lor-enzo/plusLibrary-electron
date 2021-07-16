@@ -12,14 +12,6 @@ document.getElementById("test").addEventListener("click", function(){
     }
     
     req.send();
-    
-    // fetch(req.response)
-    //     .then(function(response){
-    //         document.getElementById("target").innerHTML = "TEST\n" + JSON.stringify(response);
-    //         console.log("log;\n")
-    //         //console.log(JSON.stringify(req.responseText,null, 2));
-    //         console.log(req.responseType);
-    //     });
 });
 
 document.getElementById("alerter").addEventListener("click", function(){
