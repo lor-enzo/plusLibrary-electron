@@ -1,0 +1,40 @@
+{
+    "appid":"",
+    "name":"",
+    "playtime":{
+        "total":"",
+        "2weeks":"",
+
+        "totalwindows":"",
+        "totalmac":"",
+        "totallinux":""
+    },
+    "cost":"",
+    "dollarperhour":{
+        "total":"",
+        "2weeks":""
+    },
+    "rating":"",
+    "notes":"",
+    "completed":"",
+    
+    "dateobtained":"",
+    "datecompleted":"",
+
+    "achievements":{
+        "completed":"",
+        "total":"",
+        "percentage":""
+    },
+
+    "store":{
+        "originalprice":"",
+        "requiresoverride":"",
+        "overrideprice":"",
+
+        "originaldollarperhour":"",
+        "savings":"",
+        "savingspercentage":""
+    }
+
+}
