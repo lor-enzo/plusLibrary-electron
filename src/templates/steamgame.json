@@ -1,6 +1,8 @@
 {
     "appid":"",
+    "isinlibrary": "",
     "name":"",
+
     "playtime":{
         "total":"",
         "2weeks":"",
@@ -36,5 +38,4 @@
         "savings":"",
         "savingspercentage":""
     }
-
 }
