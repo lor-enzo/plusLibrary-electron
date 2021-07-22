@@ -28,6 +28,7 @@
     "electron": "^13.1.2"
   },
   "dependencies": {
+    "electron-db": "^0.15.7",
     "electron-json-storage": "^4.5.0",
     "electron-squirrel-startup": "^1.0.0"
   },

@@ -1,41 +1,41 @@
 {
     "appid":"",
-    "isinlibrary": "",
+    "isinlibrary":false,
     "name":"",
 
     "playtime":{
-        "total":"",
-        "2weeks":"",
+        "total":-1,
+        "2weeks":-1,
 
-        "totalwindows":"",
-        "totalmac":"",
-        "totallinux":""
+        "totalwindows":-1,
+        "totalmac":-1,
+        "totallinux":-1
     },
-    "cost":"",
+    "cost":-1,
     "dollarperhour":{
-        "total":"",
-        "2weeks":""
+        "total":-1,
+        "2weeks":-1
     },
-    "rating":"",
+    "rating":-1,
     "notes":"",
-    "completed":"",
+    "completed":false,
     
-    "dateobtained":"",
-    "datecompleted":"",
+    "dateobtained":-1,
+    "datecompleted":-1,
 
     "achievements":{
-        "completed":"",
-        "total":"",
-        "percentage":""
+        "completed":-1,
+        "total":-1,
+        "percentage":-1
     },
 
     "store":{
-        "originalprice":"",
-        "requiresoverride":"",
-        "overrideprice":"",
+        "originalprice":-1,
+        "requiresoverride":-1,
+        "overrideprice":-1,
 
-        "originaldollarperhour":"",
-        "savings":"",
-        "savingspercentage":""
+        "originaldollarperhour":-1,
+        "savings":-1,
+        "savingspercentage":-1
     }
 }

@@ -1,6 +1,8 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
+const db = require('electron-db')
+
 function createWindow () {
     const win = new BrowserWindow({
       width: 800,
@@ -16,8 +18,14 @@ function createWindow () {
       }
     })
   
+    db.createTable('games', (succ, msg) => {
+        // succ - boolean, tells if the call is successful
+        console.log("Creation Success: " + succ);
+        console.log("Message: " + msg);
+    })
 
     //win.removeMenu()
+    console.log("Finished setting up, now booting up!")
     win.loadFile('src/index.html')
 }
 
