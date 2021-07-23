@@ -46,11 +46,25 @@ function DPtest1() {
 
                         if (success) {
                             // if in db, overwrite values.
-                            console.log(success)
+                            // console.log(success)
                             if (result.length > 0) {
                                 // there is an entry
-                                console.log("entry exists");
-                                
+                                // console.log("entry exists");
+                                // overwrite values
+                                console.log("doing overwrite")
+                                // console.log(games[index].appid)
+                                console.log(result)
+                                console.log (typeof (result))
+                                let overwrittenobject = updatevalues(games[index], result[0]);
+                                let where = {
+                                    'appid': games[index]['appid']
+                                }
+                                db.updateRow('games', where, overwrittenobject, (succ, msg) => {
+                                    console.log("OVERWRITEsuccess: " + succ + ", message: " + msg);
+
+                                })
+
+
                             }
                             else {
                                 // if game is not in db, make a new game object from template
@@ -58,23 +72,22 @@ function DPtest1() {
                                 // make a new object by loading json file
                                 let json = JSON.parse(fs.readFileSync(__dirname + '/templates/steamgame.json', 'utf-8'));
                                 console.log(json)
-
-                                db.insertTableContent('games', updatevalues(games[index], json),(succ,msg) =>{
-                                    console.log("success: " + succ +", message: " + msg);
+                                console.log(typeof(json))
+                                db.insertTableContent('games', updatevalues(games[index], json), (succ, msg) => {
+                                    console.log("success: " + succ + ", message: " + msg);
                                 });
                             }
-                            return;
                         }
                         else {
                             // error handling(?)
                         }
                     })
 
-                console.log('to the next appid in response')
+                // console.log('to the next appid in response')
             }
         }
         else {
-            console.log('error, ' +  e);
+            console.log('error, ' + e);
             // error handling(?)
         }
     }
@@ -82,15 +95,19 @@ function DPtest1() {
 }
 
 function updatevalues(request, object) {
-    // basically, tie the numbers to the 
-    object['appid'] = request['appid']
-    object['name'] = request['name']
-    object['playtime']['total'] = request['playtime_forever']
-    object['playtime']['totalwindows'] = request['playtime_windows_forever']
-    object['playtime']['totalmac'] = request['playtime_mac_forever']
-    object['playtime']['totallinux'] = request['playtime_linux_forever']
+    // basically, tie the numbers to the
+    console.log(object)
+    console.log(object.playtime)
+    console.log(typeof(object.playtime))
+    
+    object.appid = request['appid']
+    object.name = request['name']
+    object.playtime.total = request.playtime_forever
+    object.playtime.totalwindows = request.playtime_windows_forever
+    object.playtime.totalmac = request.playtime_mac_forever
+    object.playtime.totallinux = request.playtime_linux_forever
 
-    object['playtime']['2weeks'] = request.hasOwnProperty('playtime_2weeks') ? request['playtime_2weeks'] : '-';
+    object.playtime['2weeks'] = request.hasOwnProperty('playtime_2weeks') ? request.playtime_2weeks : '-';
 
     object['isinlibrary'] = true
 
