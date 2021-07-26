@@ -1,0 +1,37 @@
+{
+    "appid": "",
+    "isinlibrary": false,
+    "name": "",
+    
+    "selfinput": {
+        "cost": -1,
+        "rating": -1,
+        "notes": "",
+        "completed": false,
+        "dateobtained": -1,
+        "datecompleted": -1,
+        "overridestoreprice": -1
+    },
+    "playtime": {
+        "total": -1,
+        "2weeks": -1,
+        "totalwindows": -1,
+        "totalmac": -1,
+        "totallinux": -1
+    },
+    "dollarperhour": {
+        "total": -1,
+        "store": -1
+    },
+    "achievements": {
+        "completed": -1,
+        "total": -1,
+        "percentage": -1
+    },
+    "store": {
+        "originalprice": -1,
+        "requiresoverride": -1,
+        "savings": -1,
+        "savingspercentage": -1
+    }
+}
