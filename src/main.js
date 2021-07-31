@@ -1,19 +1,31 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
+const db = require('electron-db')
+
 function createWindow () {
     const win = new BrowserWindow({
       width: 800,
       height: 600,
 
       webPreferences: {
-          preload: path.join(__dirname, 'preload.js')
+          preload: path.join(__dirname, 'preload.js'),
+          nodeIntegration: true,
+          contextIsolation: false,
+          enableRemoteModule: true
+
           //preload: path.join(__dirname, 'apitest.js')
       }
     })
   
+    db.createTable('games', (succ, msg) => {
+        // succ - boolean, tells if the call is successful
+        console.log("Creation Success: " + succ);
+        console.log("Message: " + msg);
+    })
 
     //win.removeMenu()
+    console.log("Finished setting up, now booting up!")
     win.loadFile('src/index.html')
 }
 

@@ -1,0 +1,17 @@
+{
+    "profile": {
+        "steam":{
+            "steamid":"",
+            "webapikey":""
+        }
+    },
+
+    "games":
+    {
+        "source":
+        {
+            "steam":{
+            }
+        }
+    }
+}
