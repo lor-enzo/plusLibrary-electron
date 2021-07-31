@@ -1,0 +1,32 @@
+{
+    "version": 3,
+
+    "appid": -1,
+    "isinlibrary": false,
+    "name": "",
+
+    "playtime_total": -1,
+    "playtime_2weeks": -1,
+    "playtime_windows": -1,
+    "playtime_mac": -1,
+    "playtime_linux": -1,
+
+    "input_cost": -1,
+    "input_rating": -1,
+    "input_notes": "",
+    "input_completed": false,
+    "input_dateobtained": -1,
+    "input_datecompleted": -1,
+    "input_storeprice": -1,
+
+    "dollarperhour": -1,
+    
+    "achievements_completed": -1,
+    "achievements_total": -1,
+    "achievements_percentage": -1,
+
+    "store_price": -1,
+    "store_priceoverride": -1,
+    "store_savings": -1,
+    "store_savingspercentage": -1
+}
