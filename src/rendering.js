@@ -16,7 +16,7 @@ function Rendering() {
         console.log(data);
         // iterate through object array
         target.insertAdjacentHTML('beforeend',
-            "<tr><th>APPIMAGE</th><th>APPID</th><th>NAME</th><th>HRS</th><th>2WEEKS</th><th>$/HR</th><th>COST</th><th>RATING</th><th>NOTES</th><th>COMPLETED?</th><th>DATEOBTAINED</th><th>DATECOMPLETED</th>")
+            "<tr><th>APPIMAGE</th><th>APPID</th><th>NAME</th><th>HRS</th><th>2WEEKS</th><th>$/HR</th><th>COST</th><th>RATING</th><th>NOTES</th><th>COMPLETED?</th><th>DATEOBTAINED</th><th>DATECOMPLETED</th><th></th>")
         let loop = 0
         for (let index in data) {
 
@@ -28,9 +28,9 @@ function Rendering() {
             str += "<td class='playtimetotal'>" + data[index].playtime['total'] + "</td>"
             str += "<td class='playtimetotal'>" + data[index].playtime['2weeks'] + "</td>"
             str += "<td class='dollarperhour'>" + data[index].dollarperhour.total + "</td>"
-            str += "<td class='cost'>" + data[index].appid + "</td>"
+            str += "<td class='cost'>" + data[index].cost + "</td>"
 
-            str += "<td class='rating'>" + data[index].rating + "</td>"
+            str += "<td class='rating'>" + data[index].rating + "</td>  "
             str += "<td class='notes'>" + data[index].notes + "</td>"
             str += "<td class='completed'>" + data[index].completed + "</td>"
 

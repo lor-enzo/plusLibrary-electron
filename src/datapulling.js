@@ -114,3 +114,16 @@ function updatevalues(request, object) {
     return object;
 }
 document.getElementById("datapulling").addEventListener("click", DPtest1);
+
+function DPtest2() {
+    console.log('DPtest2()')
+
+    // You can't search for nested objects
+    db.search('games', 'playtime.total', 24, (succ, data) => {
+        console.log(succ)
+        if (succ) {
+          console.log(data);
+        }
+    })
+}
+document.getElementById("datapulling2").addEventListener("click", DPtest2)
