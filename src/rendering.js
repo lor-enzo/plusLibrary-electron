@@ -15,14 +15,15 @@ function Rendering() {
         console.log(succ);
         console.log(data);
         // iterate through object array
-        // target.insertAdjacentHTML('beforeend', "<table>")
+        target.insertAdjacentHTML('beforeend',
+         "<tr><th>APPIMAGE</th> <th>APPID</th><th>NAME</th>")
         let loop = 0
         for (let index in data) {
 
-            let str = "<tr>"
-            str += '<th><img src="https://steamcdn-a.akamaihd.net/steam/apps/' + String(data[index].appid) + '/capsule_184x69.jpg"></img></th>'
-            str += "<th>" + data[index].appid + "</th>"
-            str += "<th>" + data[index].name + "</th>"
+            let str = "<tr id='" + data[index].appid +"'>"
+            str += '<td class="capsuled"><img class="capsuleimg" src="https://steamcdn-a.akamaihd.net/steam/apps/' + String(data[index].appid) + '/capsule_184x69.jpg"></img></td>'
+            str += "<td class='appid'>" + data[index].appid + "</td>"
+            str += "<td class='appname'>" + data[index].name + "</td>"
             str += "</tr>"
 
             target.insertAdjacentHTML('beforeend', str)
