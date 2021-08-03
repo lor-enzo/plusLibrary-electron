@@ -25,17 +25,17 @@ function Rendering() {
             str += "<td class='appid'>" + data[index].appid + "</td>"
             str += "<td class='appname'>" + data[index].name + "</td>"
 
-            str += "<td class='playtimetotal'>" + data[index].playtime['total'] + "</td>"
-            str += "<td class='playtimetotal'>" + data[index].playtime['2weeks'] + "</td>"
-            str += "<td class='dollarperhour'>" + data[index].dollarperhour.total + "</td>"
+            str += "<td class='playtimetotal'>" + data[index].playtime_total + "</td>"
+            str += "<td class='playtimetotal'>" + data[index].playtime_2weeks + "</td>"
+            str += "<td class='dollarperhour'>" + data[index].dollarperhour + "</td>"
             str += "<td class='cost'>" + data[index].cost + "</td>"
 
             str += "<td class='rating'>" + data[index].rating + "</td>  "
             str += "<td class='notes'>" + data[index].notes + "</td>"
             str += "<td class='completed'>" + data[index].completed + "</td>"
 
-            str += "<td class='dateobtained'>" + data[index].dateobtained + "</td>"
-            str += "<td class='datecompleted'>" + data[index].datecompleted + "</td>"
+            str += "<td class='dateobtained'>" + data[index].input_dateobtained + "</td>"
+            str += "<td class='datecompleted'>" + data[index].input_datecompleted + "</td>"
 
             str += "</tr>"
 

@@ -70,7 +70,7 @@ function DPtest1() {
                                 // if game is not in db, make a new game object from template
                                 console.log(success)
                                 // make a new object by loading json file
-                                let json = JSON.parse(fs.readFileSync(__dirname + '/templates/steamgame.json', 'utf-8'));
+                                let json = JSON.parse(fs.readFileSync(__dirname + '/templates/steamgameV3.json', 'utf-8'));
                                 console.log(json)
                                 console.log(typeof(json))
                                 db.insertTableContent('games', updatevalues(games[index], json), (succ, msg) => {
@@ -100,14 +100,14 @@ function updatevalues(request, object) {
     console.log(object.playtime)
     console.log(typeof(object.playtime))
     
-    object.appid = request['appid']
-    object.name = request['name']
-    object.playtime.total = request.playtime_forever
-    object.playtime.totalwindows = request.playtime_windows_forever
-    object.playtime.totalmac = request.playtime_mac_forever
-    object.playtime.totallinux = request.playtime_linux_forever
+    object.appid = request.appid
+    object.name = request.name
+    object.playtime_total = request.playtime_forever
+    object.playtime_windows = request.playtime_windows_forever
+    object.playtime_mac = request.playtime_mac_forever
+    object.playtime_linux = request.playtime_linux_forever
 
-    object.playtime['2weeks'] = request.hasOwnProperty('playtime_2weeks') ? request.playtime_2weeks : '-';
+    object.playtime_2weeks = request.hasOwnProperty('playtime_2weeks') ? request.playtime_2weeks : '-';
 
     object['isinlibrary'] = true
 
