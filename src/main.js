@@ -1,23 +1,23 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcRenderer } = require('electron')
 const path = require('path')
 
 const db = require('electron-db')
 
-function createWindow () {
+function createWindow() {
     const win = new BrowserWindow({
-      width: 800,
-      height: 600,
+        width: 800,
+        height: 600,
 
-      webPreferences: {
-          preload: path.join(__dirname, 'preload.js'),
-          nodeIntegration: true,
-          contextIsolation: false,
-          enableRemoteModule: true
+        webPreferences: {
+            preload: path.join(__dirname, 'preload.js'),
+            nodeIntegration: true,
+            contextIsolation: false,
+            enableRemoteModule: true
 
-          //preload: path.join(__dirname, 'apitest.js')
-      }
+            //preload: path.join(__dirname, 'apitest.js')
+        }
     })
-  
+
     db.createTable('games', (succ, msg) => {
         // succ - boolean, tells if the call is successful
         console.log("Creation Success: " + succ);
@@ -37,7 +37,7 @@ app.whenReady().then(() => {
     app.on('activate', function () {
         if (BrowserWindow.getAllWindows().length === 0) createWindow()
     })
-    
+
 })
 
 /*
@@ -52,3 +52,20 @@ app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') app.quit()
 })
 
+/*
+Here we'll handle the message recieving/sending by main
+*/
+const { ipcMain } = require('electron')
+var openWindowList = new Array()
+
+ipcMain.on("new-window-request", (event, id) => {
+
+    if (openWindowList.includes(id)) {
+        // reject the request to open
+        event.returnValue = "0";
+        return;
+    } 
+
+    console.log ("handle open window request")
+
+})
