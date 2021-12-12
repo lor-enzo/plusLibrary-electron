@@ -16,7 +16,41 @@
     <h1>EDITOR PAGE. </h1>
     This is for <span id=appid></span>.
     <hr>
-    
+    <!-- put the parameters here  -->
+    <!-- CONSTANTS VS CHANGEABLES VS CONSEQUENTS: 
+        constants: non-user input data
+        changeables: data that is reliant on user-input
+        consequents: data that is reliant; calculates based on changeables (and constants)
+    -->
+    <div class="constants" id="banner"></div>
+
+    <div class="constants" id="appid"></div>
+    <div class="constants" id="name"></div>
+    <div class="constants" id="playtime_total"></div>
+    <div class="constants" id="playtime_2weeks"></div>
+
+    <div class="constants" id="playtime_windows"></div>
+    <div class="constants" id="playtime_mac"></div>
+    <div class="constants" id="playtime_linux"></div>
+
+    <div class="changeables" id="input_cost"></div>
+    <div class="changeables" id="input_rating"></div>
+    <div class="changeables" id="input_notes"></div>
+    <div class="changeables" id="input_completed"></div>
+    <div class="changeables" id="input_dateobtained"></div>
+    <div class="changeables" id="input_datecompleted"></div>
+    <div class="changeables" id="input_storeprice"></div>
+
+    <div class="consequents" id="dollarperhour"></div>
+
+    <div class="changeables" id="achievements_completed"></div>
+    <div class="changeables" id="achievements_total"></div>
+    <div class="changeables" id="achievements_percentage"></div>
+
+    <div class="changeables" id="store_price"></div>
+    <div class="changeables" id="store_priceoverride"></div>
+    <div class="consequents" id="store_savings"></div>
+    <div class="consequents" id="store_savingspercentage"></div>
 
 
     <script type="application/javascript" src="./gameeditor.js" charset="utf-8"></script>
